@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> 
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Savora Restaurant</title>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <div class="bg-white-50 min-h-screen">
+        <nav class="px-4 h-20 bg-white flex flex-row gap-4 justify-between items-center font-[Poppins]">
+            <div class="text-lg font-[Poppins] font-semibold">SAVORA RESTAURANT</div>
+            <div class="flex gap-20 justify-center items-center flex-1">
+            <div>HOME</div>
+            <div>CUISINES</div>
+            </div>
+            <div>
+                <button type="button" class="rounded-full bg-zinc-700 px-4 py-2 text-white">LOGIN</button>
+            </div>  
+        </nav>
+    <!-- END NAVBAR -->
+
+    <!-- BG IMAGE -->
+    <div class="bg-[url('/BGnew.jpg')] bg-cover bg-center h-[600px]"></div>
+    </div>
+    <!-- END BG IMAGE -->
+
+    <div class="font-semibold text-2xl text-center font-[Poppins]">
+      <h1>Hungry for adventure? Discover your go-to cuisine!</h1>
+    </div>
+
+    <!-- SEARCH BAR -->
+    <div class="flex items-center gap-2 justify-center">
+      <div class="flex flex-col sm:flex-row gap-2 py-10 justify-center">
+          
+      <select class="px-3 py-2 border rounded-md">
+        <option>Filter by Category</option>
+        <option>Western</option>
+        <option>Italian</option>
+        <option>Indonesian</option>
+        <option>Dessert</option>
+        <option>Drinks</option>
+      </select>
+  
+      <select class="px-3 py-2 border rounded-md">
+        <option>Sort by</option>
+        <option>Newest</option>
+        <option>Oldest</option>
+      </select>
+    </div>
+        <input
+          type="text"
+          placeholder="Search..."
+          class="px-8 py-2 border border-zinc-700 rounded-md focus:outline-none focus:ring-2 focus:ring-zinc-400"
+        />
+        <button class="px-4 py-2 bg-zinc-700 text-white rounded-md hover:bg-zinc-600">
+          Search
+        </button>
+    </div>
+    <!-- END SEARCH BAR -->
+
+    <!-- CARDS -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 px-30 py-10 justify-center">
+    <div class="max-w-sm rounded overflow-hidden shadow-lg">
+            <img class="w-full" src="/img/card-top.jpg" alt="Sunset in the mountains">
+            <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
+        <p class="text-gray-700 text-base">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+        </p>
+        </div>
+    </div>
+    <div class="max-w-sm rounded overflow-hidden shadow-lg">
+            <img class="w-full" src="/img/card-top.jpg" alt="Sunset in the mountains">
+            <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
+        <p class="text-gray-700 text-base">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+        </p>
+        </div>
+    </div>
+
+      <div class="max-w-sm rounded overflow-hidden shadow-lg">
+              <img class="w-full" src="/img/card-top.jpg" alt="Sunset in the mountains">
+              <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
+          <p class="text-gray-700 text-base">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+          </p>
+          </div>
+      </div>
+    <div class="max-w-sm rounded overflow-hidden shadow-lg">
+            <img class="w-full" src="/img/card-top.jpg" alt="Sunset in the mountains">
+            <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
+        <p class="text-gray-700 text-base">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+        </p>
+        </div>
+    </div>
+    <div class="max-w-sm rounded overflow-hidden shadow-lg">
+            <img class="w-full" src="/img/card-top.jpg" alt="Sunset in the mountains">
+            <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
+        <p class="text-gray-700 text-base">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+        </p>
+        </div>
+    </div>
+
+      <div class="max-w-sm rounded overflow-hidden shadow-lg">
+              <img class="w-full" src="/img/card-top.jpg" alt="Sunset in the mountains">
+              <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
+          <p class="text-gray-700 text-base">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
+          </p>
+          </div>
+      </div>
+  </div>
+  <!-- END CARDS -->
+
+  <!-- PAGINATION -->
+   <div class="flex flex-row items-center justify-center font-[Poppins] min-h-40">
+  <button class="rounded-md border border-zinc-300 py-2 px-3 text-center text-sm transition-all shadow-sm hover:shadow-lg text-zinc-600 hover:text-white hover:bg-zinc-800 hover:border-zinc-800 focus:text-white focus:bg-zinc-800 focus:border-zinc-800 active:border-zinc-800 active:text-white active:bg-zinc-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2">
+      Prev
+  </button>
+  <button class="min-w-9 rounded-md bg-zinc-800 py-2 px-3 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-zinc-700 focus:shadow-none active:bg-zinc-700 hover:bg-zinc-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2">
+      1
+  </button>
+  <button class="min-w-9 rounded-md border border-zinc-300 py-2 px-3 text-center text-sm transition-all shadow-sm hover:shadow-lg text-zinc-600 hover:text-white hover:bg-zinc-800 hover:border-zinc-800 focus:text-white focus:bg-zinc-800 focus:border-zinc-800 active:border-zinc-800 active:text-white active:bg-zinc-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2">
+      2
+  </button>
+  <button class="min-w-9 rounded-md border border-zinc-300 py-2 px-3 text-center text-sm transition-all shadow-sm hover:shadow-lg text-zinc-600 hover:text-white hover:bg-zinc-800 hover:border-zinc-800 focus:text-white focus:bg-zinc-800 focus:border-zinc-800 active:border-zinc-800 active:text-white active:bg-zinc-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2">
+      3
+  </button>
+    <button class="min-w-9 rounded-md border border-zinc-300 py-2 px-3 text-center text-sm transition-all shadow-sm hover:shadow-lg text-zinc-600 hover:text-white hover:bg-zinc-800 hover:border-zinc-800 focus:text-white focus:bg-zinc-800 focus:border-zinc-800 active:border-zinc-800 active:text-white active:bg-zinc-800 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2">
+      Next
+  </button>
+</div>
+<!-- END OF PAGINATION -->
+
+  <!-- FOOTER -->
+      <footer class="bg-stone-50 px-4 h-20 flex items-center justify-center font-[Poppins]">
+        <div>© 2025, All Rights Reserved</div>
+      </footer>
+  <!-- END FOOTER -->
+   
+
+</body>
+</html>
