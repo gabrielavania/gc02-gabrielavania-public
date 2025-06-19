@@ -1,6 +1,6 @@
 import foodImg from "../assets/frenchfries.jpg";
 
-const Detail = () => {
+function Detail() {
   return (
     <>
       {/* NAVBAR */}
@@ -61,6 +61,6 @@ const Detail = () => {
       </footer>
     </>
   );
-};
+}
 
 export default Detail;

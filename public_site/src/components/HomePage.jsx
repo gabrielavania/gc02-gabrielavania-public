@@ -21,9 +21,10 @@ function App() {
       </nav>
 
       {/* BG IMAGE */}
-      <div className="bg-[url('/BGnew.jpg')] bg-cover bg-center h-[600px]"></div>
+      <div className="bg-[url('/BGnew1.jpg')] bg-cover bg-center h-[600px]"></div>
 
-      <div className="font-semibold text-3xl text-center font-Arial">
+      {/* TEXT */}
+      <div className="mt-20 font-semibold text-3xl text-center font-Arial">
         <h1>Hungry for adventure? Discover your go-to cuisine!</h1>
       </div>
 
