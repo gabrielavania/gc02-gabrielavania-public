@@ -1,25 +1,11 @@
-import foodImg from "../assets/frenchfries.jpg";
+// import foodImg from "../assets/frenchfries.jpg";
+import Cards from "../components/Cards";
+// import RootLayout from "../RootLayout";
 
 function App() {
   return (
+    // <RootLayout>
     <>
-      {/* NAVBAR */}
-      <nav className="px-4 h-20 bg-white flex flex-row gap-4 justify-between items-center font-Arial shadow-md">
-        <div className="text-lg font-Arial font-semibold">
-          SAVORA RESTAURANT
-        </div>
-        <div className="flex text-right">
-          <div>HOME</div>
-        </div>
-        <div>
-          <button
-            type="button"
-            className="rounded-full bg-zinc-700 px-4 py-2 text-white">
-            LOGIN
-          </button>
-        </div>
-      </nav>
-
       {/* BG IMAGE */}
       <div className="bg-[url('/BGnew1.jpg')] bg-cover bg-center h-[600px]"></div>
 
@@ -57,27 +43,7 @@ function App() {
       </div>
 
       {/* CARDS */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 px-30 py-10 justify-center">
-        {[...Array(6)].map((_, i) => (
-          <div key={i} className="max-w-sm rounded overflow-hidden shadow-lg">
-            <img
-              className="w-full"
-              src={foodImg}
-              alt="Sunset in the mountains"
-            />
-            <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2">The Coldest Sunset</div>
-              <p className="text-gray-700 text-base">Indonesian Cuisine</p>
-              <p class=" mt-4 text-gray-700 text-base font-semibold">
-                Rp 30.000
-              </p>
-              <button className="mt-4 text-md bg-amber-100 px-2 py-2 rounded-md">
-                Show Details
-              </button>
-            </div>
-          </div>
-        ))}
-      </div>
+      <Cards />
 
       {/* PAGINATION */}
       <div className="flex flex-row items-center justify-center font-Arial min-h-40">
@@ -93,11 +59,6 @@ function App() {
           </button>
         ))}
       </div>
-
-      {/* FOOTER */}
-      <footer className="bg-stone-50 px-4 h-20 flex items-center justify-center font-Arial">
-        <div>© 2025 - All Rights Reserved</div>
-      </footer>
     </>
   );
 }

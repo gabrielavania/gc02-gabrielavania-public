@@ -1,24 +1,6 @@
 const AddUserForm = () => {
   return (
     <>
-      {/* NAVBAR */}
-      <nav className="px-4 h-20 bg-blue-950 flex flex-row gap-4 justify-between items-center shadow font-Arial text-white">
-        <div className="text-2xl font-semibold">CMS PAGE</div>
-        <div className="flex gap-20 justify-center items-center flex-1">
-          <div>DASHBOARD</div>
-          <div>CATEGORY</div>
-          <div>CREATE CUISINE</div>
-          <div>ADD USER</div>
-        </div>
-        <div>
-          <button
-            type="button"
-            className="rounded-full bg-orange-500 px-4 py-2 text-white">
-            LOGOUT
-          </button>
-        </div>
-      </nav>
-      {/* <!-- END NAVBAR --> */}
       <div
         className="min-h-screen bg-gray-100 flex items-center justify-center
         font-Arial">

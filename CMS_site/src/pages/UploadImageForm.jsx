@@ -4,26 +4,8 @@ const UploadImageForm = () => {
   return (
     <>
       <div className="bg-gray-100 min-h-[600px] font-Arial">
-        {/* NAVBAR */}
-        <nav className="px-4 h-20 bg-blue-950 flex flex-row gap-4 justify-between items-center shadow text-white">
-          <div className="text-2xl font-semibold">CMS PAGE</div>
-          <div className="flex gap-20 justify-center items-center flex-1">
-            <div>DASHBOARD</div>
-            <div>CATEGORY</div>
-            <div>CREATE CUISINE</div>
-            <div>ADD USER</div>
-          </div>
-          <div>
-            <button
-              type="button"
-              className="rounded-full bg-orange-500 px-4 py-2 text-white">
-              LOGOUT
-            </button>
-          </div>
-        </nav>
-
-        <div className="flex justify-center mt-20 mb-20">
-          <div className="flex w-[900px] rounded-xl overflow-hidden shadow-lg bg-white">
+        <div className="flex justify-center mb-20">
+          <div className="flex w-[900px] mt-20 rounded-xl overflow-hidden shadow-lg">
             {/* <!-- Gambar --> */}
             <img
               className="w-1/2 h-auto object-cover"
@@ -32,7 +14,7 @@ const UploadImageForm = () => {
             />
 
             {/* <!-- Card --> */}
-            <div className="p-6 w-1/2 flex flex-col">
+            <div className="p-6 w-1/2 flex flex-col bg-white">
               <h2 className="text-2xl font-bold mb-4">French Fries</h2>
               <p className="text-gray-700 text-base">
                 Ini adalah deskripsi makanan yang enak banget, cocok buat kamu

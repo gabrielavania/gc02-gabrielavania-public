@@ -1,27 +1,9 @@
 import foodImg from "../assets/frenchfries.jpg";
+import { Link } from "react-router";
 
 function Detail() {
   return (
     <>
-      {/* NAVBAR */}
-      <div className="bg-white shadow-sm">
-        <nav className="px-4 h-20 bg-white flex flex-row gap-4 justify-between items-center font-Arial">
-          <div className="text-lg font-Arial font-semibold">
-            SAVORA RESTAURANT
-          </div>
-          <div className="flex text-right">
-            <div>HOME</div>
-          </div>
-          <div>
-            <button
-              type="button"
-              className="rounded-full bg-zinc-700 px-4 py-2 text-white">
-              LOGIN
-            </button>
-          </div>
-        </nav>
-      </div>
-
       {/* DETAIL CUISINE */}
       <div className="flex justify-center mt-20 mb-20">
         <div className="flex w-[900px] rounded-xl overflow-hidden shadow-lg bg-white">
@@ -32,7 +14,7 @@ function Detail() {
             alt="Gambar makanan"
           />
 
-          {/* <!-- Card --> */}
+          {/* <!-- CARD --> */}
           <div className="p-6 w-1/2 flex flex-col">
             <h2 className="text-2xl font-bold mb-4">French Fries</h2>
             <p className="text-gray-700 text-base">
@@ -48,17 +30,12 @@ function Detail() {
               <button
                 type="button"
                 className="rounded-3xl bg-amber-100 hover:bg-amber-200 px-4 py-2 text-black">
-                Back
+                <Link to="/">Back</Link>
               </button>
             </div>
           </div>
         </div>
       </div>
-
-      {/* FOOTER */}
-      <footer className="bg-stone-50 px-4 h-20 flex items-center justify-center font-Arial">
-        <div>© 2025 - All Rights Reserved</div>
-      </footer>
     </>
   );
 }

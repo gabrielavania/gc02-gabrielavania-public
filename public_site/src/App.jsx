@@ -1,8 +1,14 @@
 import { useState } from "react";
 
-// Import the component Here
-import Homepage from "./components/HomePage";
-import DetailCuisine from "./components/DetailCuisine";
+// ROUTER
+import { RouterProvider } from "react-router";
+import { router } from "./router";
+
+// PAGES
+// import Homepage from "./pages/HomePage";
+// import DetailCuisine from "./pages/DetailCuisine";
+
+// COMPONENTS
 // import NavBar from "./components/NavBar";
 // import HomeContent from "./components/HomeContent";
 // import Footer from "./components/Footer";
@@ -99,8 +105,7 @@ function App() {
 
   return (
     <>
-      <Homepage />
-      <DetailCuisine />
+      <RouterProvider router={router} />
     </>
   );
 }
