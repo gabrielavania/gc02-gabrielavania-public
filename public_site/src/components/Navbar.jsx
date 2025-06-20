@@ -9,7 +9,7 @@ const NavBar = () => {
         password,
       });
 
-      console.log("Login berhasil!", response.data);
+      console.log("Login berhasil", response.data);
     } catch (err) {
       console.error("Login gagal:", err.response.data.msg || err.message);
     }
@@ -19,7 +19,7 @@ const NavBar = () => {
       <div className="bg-white shadow-sm">
         <nav className="px-4 h-20 bg-white flex flex-row justify-between items-center font-Arial">
           <div className="flex items-center gap-8">
-            <div className="text-lg font-Arial font-semibold">
+            <div className="text-xl font-Arial font-semibold">
               SAVORA RESTAURANT
             </div>
             <div>
@@ -29,7 +29,7 @@ const NavBar = () => {
           <div>
             <button
               type="button"
-              className="rounded-full bg-zinc-700 px-4 py-2 text-white">
+              className="rounded-full bg-zinc-700 px-4 py-2 text-white hover:bg-amber-400">
               <Link to="http://localhost:5173/login">LOGIN</Link>
             </button>
           </div>

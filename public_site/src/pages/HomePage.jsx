@@ -1,10 +1,8 @@
-// import foodImg from "../assets/frenchfries.jpg";
 import Cards from "../components/Cards";
 // import RootLayout from "../RootLayout";
 
 function App() {
   return (
-    // <RootLayout>
     <>
       {/* BG IMAGE */}
       <div className="bg-[url('/BGnew1.jpg')] bg-cover bg-center h-[600px]"></div>

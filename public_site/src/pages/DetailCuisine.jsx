@@ -1,7 +1,24 @@
-import foodImg from "../assets/frenchfries.jpg";
-import { Link } from "react-router";
+import { Link, useParams } from "react-router";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 function Detail() {
+  const [detailCuisine, setDetailCuisine] = useState();
+  const { id } = useParams();
+
+  useEffect(() => {
+    (async () => {
+      const { data } = await axios.get(`http://localhost:3000/cuisines/${id}`);
+      setDetailCuisine(data.data);
+
+      console.log(data);
+    })();
+  }, []);
+
+  if (!detailCuisine) {
+    return <p className="text-center mt-20">Loading detail makanan</p>;
+  }
+
   return (
     <>
       {/* DETAIL CUISINE */}
@@ -10,21 +27,18 @@ function Detail() {
           {/* <!-- Gambar --> */}
           <img
             className="w-1/2 h-auto object-cover"
-            src={foodImg}
-            alt="Gambar makanan"
+            src={detailCuisine.imgUrl}
+            alt="image"
           />
 
           {/* <!-- CARD --> */}
           <div className="p-6 w-1/2 flex flex-col">
-            <h2 className="text-2xl font-bold mb-4">French Fries</h2>
+            <h2 className="text-2xl font-bold mb-4">{detailCuisine.name}</h2>
             <p className="text-gray-700 text-base">
-              Ini adalah deskripsi makanan yang enak banget, cocok buat kamu
-              yang lapar tengah malam. Lorem ipsum dolor sit amet, consectetur
-              adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis
-              eaque, exercitationem praesentium nihil.
+              {detailCuisine.description}
             </p>
-            <p className="text-gray-700 text-base font-semibold mt-4">
-              Rp 30.000
+            <p className="text-gray-700 text-lg font-semibold mt-4">
+              Rp {detailCuisine.price.toLocaleString("id-ID")}
             </p>
             <div className="mt-6 font-Arial font-semibold">
               <button
