@@ -1,18 +1,6 @@
 import { Link } from "react-router";
-import { useState, useEffect } from "react";
-import axios from "axios";
 
-const Cards = () => {
-  const [cards, setCards] = useState([]);
-
-  useEffect(() => {
-    (async () => {
-      const { data } = await axios.get("http://localhost:3000/pub/cuisines");
-      setCards(data.data);
-
-      console.log(data);
-    })();
-  }, []);
+export default function Cards({ cards }) {
   return (
     <>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 px-30 py-10 justify-center">
@@ -42,6 +30,4 @@ const Cards = () => {
       </div>
     </>
   );
-};
-
-export default Cards;
+}

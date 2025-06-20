@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 // ROUTER
 import { RouterProvider } from "react-router";
 import { router } from "./router";

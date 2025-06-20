@@ -44,7 +44,21 @@ function Detail() {
               <button
                 type="button"
                 className="rounded-3xl bg-amber-100 hover:bg-amber-200 px-4 py-2 text-black">
-                <Link to="/">Back</Link>
+                <Link to="/">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+                    />
+                  </svg>
+                </Link>
               </button>
             </div>
           </div>
