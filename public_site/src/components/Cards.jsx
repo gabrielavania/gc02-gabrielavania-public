@@ -22,7 +22,7 @@ export default function Cards({ cards }) {
                 Rp {card.price.toLocaleString("id-ID")}
               </p>
               <button className="mt-4 text-md bg-amber-100 hover:bg-amber-200 px-2 py-2 rounded-md">
-                <Link to={`/cuisine/${card.id}`}>Show Details</Link>
+                <Link to={`/detail/${card.id}`}>Show Details</Link>
               </button>
             </div>
           </div>

@@ -4,10 +4,10 @@ import CMSHomePage from "../pages/CMSHomePage";
 import Category from "../pages/Category";
 import AddUserForm from "../pages/AddUserForm";
 import UploadImageForm from "../pages/UploadImageForm";
-import AddCuisineForm from "../components/AddCuisineForm";
 import RootLayout from "../layout/RootLayout";
-// import EditCuisineForm from "../pages/EditCuisineForm";
+import EditCuisineForm from "../pages/EditCuisineForm";
 import Login from "../pages/Login";
+import AddCuisineForm from "../pages/AddCuisineForm";
 
 export const router = createBrowserRouter([
   {
@@ -29,19 +29,19 @@ export const router = createBrowserRouter([
         element: <Category />,
       },
       {
-        path: "/addCuisines",
+        path: "/addCuisine",
         element: <AddCuisineForm />,
       },
       {
-        path: "/editCuisines/:id",
-        element: <AddCuisineForm />,
+        path: "/editCuisine/:id",
+        element: <EditCuisineForm />,
       },
       {
         path: "/addUser",
         element: <AddUserForm />,
       },
       {
-        path: "/imgUrl/:id",
+        path: "/image/:id",
         element: <UploadImageForm />,
       },
     ],

@@ -19,13 +19,10 @@ const NavBar = () => {
             <Link to="/categories">CATEGORY</Link>
           </div>
           <div>
-            <Link to="/addCuisines">ADD CUISINE</Link>
+            <Link to="/addCuisine">ADD CUISINE</Link>
           </div>
           <div>
             <Link to="/addUser">ADD USER</Link>
-          </div>
-          <div>
-            <Link to="/imgUrl/:id">UPLOAD IMAGE</Link>
           </div>
         </div>
         <div>

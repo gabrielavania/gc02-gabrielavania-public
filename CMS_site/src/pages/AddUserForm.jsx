@@ -1,4 +1,40 @@
-const AddUserForm = () => {
+import axios from "axios";
+import { useNavigate } from "react-router";
+import Button from "../components/Button";
+import CuisineForm from "../components/CuisineForm";
+
+export default function AddUserForm() {
+  const navigate = useNavigate();
+
+  async function handleSubmit(e, form) {
+    e.preventDefault();
+    try {
+      const { data } = await axios.post(
+        "http://localhost:3000/cuisines",
+        form,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.access_token}`,
+          },
+        }
+      );
+
+      navigate("/");
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: `Succeed add new data ${data.data.name}`,
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong!",
+      });
+    }
+  }
   return (
     <>
       <div
@@ -91,16 +127,10 @@ const AddUserForm = () => {
             </div>
 
             {/* <!-- Submit --> */}
-            <button
-              type="submit"
-              className="mt-3 w-full bg-orange-500 text-white py-2 rounded-md hover:bg-orange-600 transition">
-              Add
-            </button>
+            <Button />
           </form>
         </div>
       </div>
     </>
   );
-};
-
-export default AddUserForm;
+}

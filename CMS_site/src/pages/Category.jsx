@@ -6,7 +6,11 @@ const Category = () => {
 
   useEffect(() => {
     (async () => {
-      const { data } = await axios.get("http://localhost:3000/categories");
+      const { data } = await axios.get("http://localhost:3000/categories", {
+        headers: {
+          Authorization: `Bearer ${localStorage.access_token}`,
+        },
+      });
       setCategories(data.data);
 
       console.log("ini categories", categories);

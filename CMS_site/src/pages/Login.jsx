@@ -20,6 +20,7 @@ const Login = () => {
       console.log(data);
 
       localStorage.setItem("access_token", data.access_token);
+      localStorage.setItem("authorId", data.user.id);
       navigate("/");
     } catch (err) {
       console.log(err);
@@ -64,6 +65,7 @@ const Login = () => {
                   onClick={() => {
                     localStorage.clear();
                   }}>
+                  {" "}
                   Login
                 </button>
               </div>

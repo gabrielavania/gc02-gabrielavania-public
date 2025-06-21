@@ -14,7 +14,7 @@ export const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: "/cuisine/:id",
+        path: "/detail/:id",
         element: <DetailCuisine />,
       },
     ],

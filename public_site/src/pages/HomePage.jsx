@@ -6,8 +6,8 @@ function App() {
   const [cards, setCards] = useState([]);
   const [search, setSearch] = useState("");
   // const [sort, setSort] = useState("");
-  // const [totalPage, setTotalPage] = useState();
   // const [currentPage, setCurrentpage] = useState();
+  // const [totalPage, setTotalPage] = useState();
   // const pagination = handlePagination();
 
   async function fetchProducts() {

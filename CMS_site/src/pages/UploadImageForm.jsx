@@ -1,6 +1,50 @@
-import foodImg from "../assets/frenchfries.jpg";
+import { useParams } from "react-router";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const UploadImageForm = () => {
+  const { id } = useParams();
+  const [cuisine, setCuisine] = useState(null);
+
+  useEffect(() => {
+    const fetchCuisine = async () => {
+      try {
+        const { data } = await axios.get(
+          `http://localhost:3000/cuisines/${id}`
+        );
+        setCuisine(data?.data);
+        console.log(data);
+      } catch (err) {
+        console.log("Failed to fetch cuisine:", err);
+      }
+    };
+
+    fetchCuisine();
+  }, [id]);
+
+  if (!cuisine) return <p className="text-center mt-20">Loading...</p>;
+
+  async function handleUpload(e, id) {
+    try {
+      const images = e.target.files[0];
+      const formData = new FormData();
+      formData.append("file", images);
+
+      const { data } = await axios.patch(
+        `http://localhost:3000/cuisines/imgUrl/${id}`,
+        formData,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.access_token}`,
+          },
+        }
+      );
+      console.log(data);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   return (
     <>
       <div className="bg-gray-100 min-h-[600px] font-Arial">
@@ -9,8 +53,8 @@ const UploadImageForm = () => {
             {/* <!-- Gambar --> */}
             <img
               className="w-1/2 h-auto object-cover"
-              src={foodImg}
-              alt="Gambar makanan"
+              src={cuisine.imgUrl}
+              alt="cuisine photo"
             />
 
             {/* <!-- Card --> */}
@@ -28,7 +72,7 @@ const UploadImageForm = () => {
 
               {/* UPLOAD FILE */}
               <div className="justify-start mt-8">
-                <label
+                {/* <label
                   for="uploadFile"
                   className="bg-orange-500 hover:bg-orange-600 text-white text-base font-medium px-4 py-2.5 outline-none rounded w-max cursor-pointer mx-auto">
                   <svg
@@ -46,7 +90,32 @@ const UploadImageForm = () => {
                   </svg>
                   Upload
                   <input type="file" id="uploadFile" class="hidden" />
+                </label> */}
+
+                <label
+                  htmlFor={`uploadFile${cuisine.id}`}
+                  className="bg-yellow-400 text-white px-3 py-1 rounded hover:bg-yellow-500 text-sm cursor-pointer inline-flex items-center gap-1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="size-4">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5"
+                    />
+                  </svg>
+                  Upload
                 </label>
+                <input
+                  type="file"
+                  id={`uploadFile${cuisine.id}`}
+                  className="hidden"
+                  onChange={(e) => handleUpload(e, cuisine.id)}
+                />
               </div>
             </div>
           </div>
