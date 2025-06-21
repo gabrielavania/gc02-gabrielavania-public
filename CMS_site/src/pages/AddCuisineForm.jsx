@@ -9,7 +9,7 @@ export default function AddCuisineForm() {
     e.preventDefault();
 
     try {
-      const authorId = +localStorage.getItem("authorId"); // 🧠 pastikan ini angka
+      const authorId = +localStorage.getItem("authorId");
       const formWithAuthor = { ...form, authorId };
 
       await axios.post("http://localhost:3000/cuisines", formWithAuthor, {

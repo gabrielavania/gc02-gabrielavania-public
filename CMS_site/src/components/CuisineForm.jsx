@@ -40,7 +40,6 @@ export default function CuisineForm({ cuisines, handleSubmit, propName }) {
         icon: err.response.data.error,
         title: "Oops...",
         text: err.response.data.error,
-        footer: '<a href="#">Why do I have this issue?</a>',
       });
     }
   }

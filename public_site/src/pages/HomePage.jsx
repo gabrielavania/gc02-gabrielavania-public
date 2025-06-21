@@ -5,23 +5,23 @@ import axios from "axios";
 function App() {
   const [cards, setCards] = useState([]);
   const [search, setSearch] = useState("");
-  // const [sort, setSort] = useState("");
-  // const [currentPage, setCurrentpage] = useState();
-  // const [totalPage, setTotalPage] = useState();
-  // const pagination = handlePagination();
+  const [sort, setSort] = useState("");
+  const [filter, setFilter] = useState("");
+  const [currentPage, setCurrentpage] = useState(1);
+  const [totalPage, setTotalPage] = useState();
 
   async function fetchProducts() {
     try {
       const { data } = await axios.get(
-        `http://localhost:3000/pub/cuisines?search=${search}`
+        `http://localhost:3000/pub/cuisines?search=${search}&page=${currentPage}&sort=${sort}&categories=${filter}`
       );
 
       console.log(data);
 
       setCards(data.data);
 
-      // setCurrentpage(data.data.pagination.currentPage);
-      // setTotalPage(data.data.pagination.totalPage);
+      setCurrentpage(data.currentPage);
+      setTotalPage(data.totalPage);
     } catch (err) {
       console.log(err);
     }
@@ -34,21 +34,22 @@ function App() {
 
   useEffect(() => {
     fetchProducts();
-  }, [search]);
+  }, [search, currentPage, sort, filter]);
+  console.log(sort);
 
-  // function handlePagination() {
-  //   let arr = [];
+  function handlePagination() {
+    let arr = [];
 
-  //   for (let i = 1; i <= totalPage; i++) {
-  //     arr.push(i);
-  //   }
+    for (let i = 1; i <= totalPage; i++) {
+      arr.push(i);
+    }
 
-  //   return arr;
-  // }
+    return arr;
+  }
 
-  function handleSearch(event) {
-    event.preventDefault();
-    fetchProducts();
+  async function handleFilterCategory(categoryId) {
+    setFilter(categoryId);
+    setCurrentpage(1);
   }
 
   return (
@@ -64,22 +65,29 @@ function App() {
       {/* FILTER */}
       <div className="flex items-center gap-2 justify-center">
         <div className="flex flex-col sm:flex-row gap-2 py-10 justify-center">
-          <select className="px-3 py-2 border rounded-md">
-            <option>Filter by Category</option>
-            <option>Western</option>
-            <option>Italian</option>
-            <option>Indonesian</option>
-            <option>Dessert</option>
-            <option>Drinks</option>
+          <select
+            className="px-3 py-2 border rounded-md"
+            onChange={(e) => handleFilterCategory(e.target.value)}>
+            <option value="" disabled selected>
+              Filter by Category
+            </option>
+            <option value="">All Categories</option>
+            <option value="1">Western</option>
+            <option value="2">Italian</option>
+            <option value="3">Indonesian</option>
+            <option value="4">Dessert</option>
+            <option value="5">Drinks</option>
           </select>
 
           {/* SORT */}
           <select
             className="px-3 py-2 border rounded-md"
             onChange={(event) => setSort(event.target.value)}>
-            <option>Sort by</option>
-            <option>Newest</option>
-            <option>Oldest</option>
+            <option value disabled="">
+              Sort by
+            </option>
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
           </select>
         </div>
 
@@ -92,11 +100,6 @@ function App() {
             className="px-8 py-2 border border-zinc-700 rounded-md focus:outline-none focus:ring-2 focus:ring-zinc-400"
             onChange={(event) => setSearch(event.target.value)}
           />
-          {/* <button
-            type="submit"
-            className="px-4 py-2 bg-zinc-700 text-white rounded-md hover:bg-zinc-600 cursor-pointer">
-            Search
-          </button> */}
         </form>
       </div>
 
@@ -104,19 +107,23 @@ function App() {
       <Cards cards={cards} />
 
       {/* PAGINATION */}
-      <div className="flex flex-row items-center justify-center font-Arial min-h-40">
-        {[1, 2, 3].map((page) => (
-          <button
-            key={page}
-            className={`min-w-9 rounded-md py-2 px-3 text-center text-sm ml-2 ${
-              page === 1
-                ? "bg-zinc-800 text-white border border-transparent"
-                : "border border-zinc-300 text-zinc-600 hover:text-white hover:bg-zinc-800 hover:border-zinc-800"
-            }`}>
-            {page}
-          </button>
-        ))}
-      </div>
+      <nav className="flex items-center justify-center my-8">
+        <div className="flex gap-x-1">
+          {/* Page Numbers */}
+          {handlePagination().map((page) => (
+            <button
+              key={page}
+              className={`min-h-[38px] min-w-[38px] flex justify-center items-center rounded-lg border ${
+                page === currentPage
+                  ? "bg-zinc-700 text-white"
+                  : "bg-white text-black"
+              }`}
+              onClick={() => setCurrentpage(page)}>
+              {page}
+            </button>
+          ))}
+        </div>
+      </nav>
     </>
   );
 }

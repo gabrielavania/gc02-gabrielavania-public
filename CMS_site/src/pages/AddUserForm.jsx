@@ -26,7 +26,7 @@ export default function AddUserForm() {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:3000/add-user", // pastiin backend-mu sesuai ya!
+        "http://localhost:3000/add-user",
         form,
         {
           headers: {
