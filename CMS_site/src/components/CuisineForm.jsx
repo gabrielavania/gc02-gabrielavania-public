@@ -47,7 +47,6 @@ export default function CuisineForm({ cuisines, handleSubmit, propName }) {
 
   useEffect(() => {
     fetchCategories();
-    console.log("📢 propName masuk:", propName);
   }, []);
 
   useEffect(() => {
@@ -72,7 +71,7 @@ export default function CuisineForm({ cuisines, handleSubmit, propName }) {
     <>
       <div
         className="min-h-screen bg-gray-100 flex items-center justify-center
-        font-Arial">
+        font-Arial py-20">
         {/* <!-- FORM CONTAINER --> */}
         <form
           className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md"
@@ -81,10 +80,8 @@ export default function CuisineForm({ cuisines, handleSubmit, propName }) {
             {propName || "Form Title"}
           </h2>
           {/* <!-- Name --> */}
-          <div>
-            <label
-              className="block text-sm font-medium text-zinc-700 mb-1"
-              htmlFor="name">
+          <div className="mb-4">
+            <label className="block text-md text-zinc-700 mb-1" htmlFor="name">
               Name
             </label>
             <input
@@ -98,10 +95,8 @@ export default function CuisineForm({ cuisines, handleSubmit, propName }) {
             />
           </div>
           {/* <!-- Price --> */}
-          <div>
-            <label
-              className="block text-sm font-medium text-zinc-700 mb-1"
-              htmlFor="price">
+          <div className="mb-4">
+            <label className="block text-md text-zinc-700 mb-1" htmlFor="price">
               Price (Rp)
             </label>
             <input
@@ -115,9 +110,9 @@ export default function CuisineForm({ cuisines, handleSubmit, propName }) {
             />
           </div>
           {/* <!-- Image Url --> */}
-          <div>
+          <div className="mb-4">
             <label
-              className="block text-sm font-medium text-zinc-700 mb-1"
+              className="block text-md text-zinc-700 mb-1"
               htmlFor="imgUrl">
               Image Url
             </label>
@@ -131,9 +126,9 @@ export default function CuisineForm({ cuisines, handleSubmit, propName }) {
               value={form?.imgUrl}></input>
           </div>
           {/* <!-- Description --> */}
-          <div>
+          <div className="mb-4">
             <label
-              className="block text-sm font-medium text-zinc-700 mb-1"
+              className="block text-md text-zinc-700 mb-1"
               htmlFor="description">
               Description
             </label>
@@ -148,10 +143,8 @@ export default function CuisineForm({ cuisines, handleSubmit, propName }) {
             />
           </div>
           {/* Category */}
-          <div>
-            <label className="block text-sm font-medium text-zinc-700 mb-1">
-              Category
-            </label>
+          <div className="mb-4">
+            <label className="block text-md text-zinc-700 mb-1">Category</label>
             <select
               className="w-full px-3 py-2 border-1 rounded-md"
               name="category"

@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useNavigate } from "react-router";
 import Button from "../components/Button";
-import CuisineForm from "../components/CuisineForm";
 
 export default function AddUserForm() {
   const navigate = useNavigate();
@@ -23,7 +22,7 @@ export default function AddUserForm() {
       Swal.fire({
         position: "center",
         icon: "success",
-        title: `Succeed add new data ${data.data.name}`,
+        title: `Succeed add new user`,
         showConfirmButton: false,
         timer: 1500,
       });
@@ -49,7 +48,7 @@ export default function AddUserForm() {
             {/* <!-- Username --> */}
             <div>
               <label
-                className="block text-sm font-medium text-blue-950 mb-1"
+                className="block text-md font-medium text-blue-950 mb-1 py-1"
                 for="username">
                 Username
               </label>
@@ -65,7 +64,7 @@ export default function AddUserForm() {
             {/* <!-- Email --> */}
             <div>
               <label
-                className="block text-sm font-medium text-zinc-700 mb-1"
+                className="block text-md font-medium text-zinc-700 mb-1"
                 for="email">
                 Email
               </label>
@@ -81,7 +80,7 @@ export default function AddUserForm() {
             {/* <!-- Password --> */}
             <div>
               <label
-                className="block text-sm font-medium text-zinc-700 mb-1"
+                className="block text-md font-medium text-zinc-700 mb-1"
                 for="password">
                 Password
               </label>
@@ -97,7 +96,7 @@ export default function AddUserForm() {
             {/* <!-- Phone Number --> */}
             <div>
               <label
-                className="block text-sm font-medium text-zinc-700 mb-1"
+                className="block text-md font-medium text-zinc-700 mb-1"
                 for="phoneNumber">
                 Phone Number
               </label>
@@ -113,7 +112,7 @@ export default function AddUserForm() {
             {/* <!-- Address--> */}
             <div>
               <label
-                className="block text-8 font-medium text-zinc-700 mb-1"
+                className="block text-md font-medium text-zinc-700 mb-1"
                 for="address">
                 Address
               </label>

@@ -7,8 +7,6 @@ import Swal from "sweetalert2";
 export default function EditCuisineForm() {
   const [cuisines, setCuisines] = useState({});
   const { id } = useParams();
-  console.log("🚀 EditCuisineForm ID:", id);
-  console.log("📦 Fetched cuisine:", cuisines);
   const navigate = useNavigate();
 
   async function fetchCuisine() {
@@ -44,17 +42,12 @@ export default function EditCuisineForm() {
           Authorization: `Bearer ${localStorage.access_token}`,
         },
       });
-      console.log(
-        "🪪 Kirim request edit dengan token:",
-        localStorage.access_token
-      );
-      console.log("📦 Data form yang dikirim:", formWithAuthor);
 
       navigate("/");
       Swal.fire({
         position: "center",
         icon: "success",
-        title: `Succeed edit data ${form.name}`,
+        title: `Succeed Edit Data ${form.name}`,
         showConfirmButton: false,
         timer: 1500,
       });

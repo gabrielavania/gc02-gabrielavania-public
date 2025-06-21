@@ -22,22 +22,34 @@ export default function CMSHomePage() {
     fetchProduct();
   }, []);
 
-  // async function handleDelete(id) {
-  //   try {
-  //     const { data } = await axios.delete(
-  //       `http://localhost:3000/cuisines/${id}`,
-  //       {
-  //         headers: {
-  //           Authorization: `Bearer ${localStorage.access_token}`,
-  //         },
-  //       }
-  //     );
-  //     console.log(data);
-  //     fetchProduct();
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // }
+  async function handleDelete(id) {
+    try {
+      const { data } = await axios.delete(
+        `http://localhost:3000/cuisines/${id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.access_token}`,
+          },
+        }
+      );
+      console.log(data);
+      fetchProduct();
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: `Succeed Delete Data`,
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    } catch (err) {
+      console.log(err);
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "Cannot Delete Data",
+      });
+    }
+  }
 
   // async function handleUpload(e, id) {
   //   try {
@@ -131,11 +143,7 @@ export default function CMSHomePage() {
 
                       <button
                         className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 text-sm cursor-pointer"
-                        onClick={() => {
-                          if (confirm("Are you sure you want to delete?")) {
-                            handleDelete(cuisine.id);
-                          }
-                        }}>
+                        onClick={() => handleDelete(cuisine.id)}>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
