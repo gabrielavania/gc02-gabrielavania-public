@@ -51,27 +51,6 @@ export default function CMSHomePage() {
     }
   }
 
-  // async function handleUpload(e, id) {
-  //   try {
-  //     const images = e.target.files[0];
-  //     const formData = new FormData();
-  //     formData.append("file", images);
-
-  //     const { data } = await axios.patch(
-  //       `http://localhost:3000/cuisines/imgUrl/${id}`,
-  //       formData,
-  //       {
-  //         headers: {
-  //           Authorization: `Bearer ${localStorage.access_token}`,
-  //         },
-  //       }
-  //     );
-  //     console.log(data);
-  //   } catch (error) {
-  //     console.log(err);
-  //   }
-  // }
-
   return (
     <>
       <div className="mt-20 mb-20 flex flex-auto justify-center min-h-100 px-4">
@@ -116,7 +95,7 @@ export default function CMSHomePage() {
                       </Link>
 
                       <label
-                        // htmlFor={`uploadFile${cuisine.id}`}
+                        htmlFor={`uploadFile${cuisine.id}`}
                         className="bg-yellow-400 text-white px-3 py-1 rounded hover:bg-yellow-500 text-sm cursor-pointer inline-flex items-center gap-1">
                         <Link to={`/image/${cuisine.id}`}>
                           <svg
@@ -134,13 +113,6 @@ export default function CMSHomePage() {
                           </svg>
                         </Link>
                       </label>
-                      {/* <input
-                        type="file"
-                        id={`uploadFile${cuisines.id}`}
-                        className="hidden"
-                        onChange={(e) => handleUpload(e, cuisine.id)}
-                      /> */}
-
                       <button
                         className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 text-sm cursor-pointer"
                         onClick={() => handleDelete(cuisine.id)}>
