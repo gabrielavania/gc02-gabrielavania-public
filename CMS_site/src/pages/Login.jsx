@@ -4,8 +4,8 @@ import { useNavigate } from "react-router";
 
 const Login = () => {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("bella@mail.com");
-  const [password, setPassword] = useState("12345");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const formOnSubmitHandler = async (event) => {
     event.preventDefault();

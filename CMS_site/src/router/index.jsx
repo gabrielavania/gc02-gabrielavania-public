@@ -13,12 +13,12 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
-    // loader: () => {
-    //   if (!localStorage.access_token) {
-    //     return redirect("/login");
-    //   }
-    //   return null;
-    // },
+    loader: () => {
+      if (!localStorage.access_token) {
+        return redirect("/login");
+      }
+      return null;
+    },
     children: [
       {
         path: "/",

@@ -64,9 +64,9 @@ export default function AddUserForm() {
           </h2>
           <div>
             {/* Username */}
-            <div>
+            <div className="mb-4">
               <label
-                className="block text-md font-medium text-blue-950 mb-1 py-1"
+                className="block text-md font-medium text-blue-950 mb-1"
                 htmlFor="username">
                 Username
               </label>
@@ -82,7 +82,7 @@ export default function AddUserForm() {
             </div>
 
             {/* Email */}
-            <div>
+            <div className="mb-4">
               <label
                 className="block text-md font-medium text-zinc-700 mb-1"
                 htmlFor="email">
@@ -100,7 +100,7 @@ export default function AddUserForm() {
             </div>
 
             {/* Password */}
-            <div>
+            <div className="mb-4">
               <label
                 className="block text-md font-medium text-zinc-700 mb-1"
                 htmlFor="password">
@@ -118,7 +118,7 @@ export default function AddUserForm() {
             </div>
 
             {/* Phone Number */}
-            <div>
+            <div className="mb-4">
               <label
                 className="block text-md font-medium text-zinc-700 mb-1"
                 htmlFor="phoneNumber">
@@ -136,7 +136,7 @@ export default function AddUserForm() {
             </div>
 
             {/* Address */}
-            <div>
+            <div className="mb-4">
               <label
                 className="block text-md font-medium text-zinc-700 mb-1"
                 htmlFor="address">
