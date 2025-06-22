@@ -4,13 +4,10 @@ import axios from "axios";
 const NavBar = () => {
   const handleLogin = async (login, password) => {
     try {
-      const response = await axios.post(
-        "https://gc02-gabrielavania-cms.vercel.app/login",
-        {
-          email,
-          password,
-        }
-      );
+      const response = await axios.post("https://cms.vngbr.web.id/login", {
+        email,
+        password,
+      });
 
       console.log("Login berhasil", response.data);
     } catch (err) {
@@ -32,8 +29,7 @@ const NavBar = () => {
           <div>
             <button
               onClick={() =>
-                (window.location.href =
-                  "https://gc02-gabrielavania-cms.vercel.app/login")
+                (window.location.href = "https://cms.vngbr.web.id/login")
               }
               className="rounded-full bg-zinc-700 px-4 py-2 text-white hover:bg-amber-400 cursor-pointer">
               LOGIN

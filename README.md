@@ -3,8 +3,14 @@
 # P2-Challenge-2 (Client Side)
 
 **Link Deployment :**
+
 - Public Site: https://gc02-gabrielavania-public.vercel.app/
 - CMS (Admin Side): https://gc02-gabrielavania-cms.vercel.app/login
+
+**Link Domain :**
+
+- Public Site: https://www.vngbr.web.id/
+- CMS (Admin Side): https://cms.vngbr.web.id/login
 
 ## Tech Stack
 
