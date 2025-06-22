@@ -2,9 +2,9 @@
 
 # P2-Challenge-2 (Client Side)
 
-**Link :**
-
->
+**Link Deployment :**
+- Public Site: https://gc02-gabrielavania-public.vercel.app/
+- CMS (Admin Side): https://gc02-gabrielavania-cms.vercel.app/login
 
 ## Tech Stack
 
