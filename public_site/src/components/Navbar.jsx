@@ -32,7 +32,8 @@ const NavBar = () => {
           <div>
             <button
               onClick={() =>
-                (window.location.href = "http://localhost:5174/login")
+                (window.location.href =
+                  "https://gc02-gabrielavania-cms.vercel.app/login")
               }
               className="rounded-full bg-zinc-700 px-4 py-2 text-white hover:bg-amber-400 cursor-pointer">
               LOGIN
