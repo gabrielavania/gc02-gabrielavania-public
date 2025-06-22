@@ -9,7 +9,7 @@ function Detail() {
   useEffect(() => {
     (async () => {
       const { data } = await axios.get(
-        `http://localhost:3000/pub/cuisines/${id}`
+        `https://vngbr.web.id/pub/cuisines/${id}`
       );
       setDetailCuisine(data.data);
 

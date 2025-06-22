@@ -13,7 +13,7 @@ function App() {
   async function fetchProducts() {
     try {
       const { data } = await axios.get(
-        `http://localhost:3000/pub/cuisines?search=${search}&page=${currentPage}&sort=${sort}&categories=${filter}`
+        `https://vngbr.web.id/pub/cuisines?search=${search}&page=${currentPage}&sort=${sort}&categories=${filter}`
       );
 
       console.log(data);
