@@ -4,10 +4,13 @@ import axios from "axios";
 const NavBar = () => {
   const handleLogin = async (login, password) => {
     try {
-      const response = await axios.post("http://localhost:5173/login", {
-        email,
-        password,
-      });
+      const response = await axios.post(
+        "https://gc02-gabrielavania-cms.vercel.app/login",
+        {
+          email,
+          password,
+        }
+      );
 
       console.log("Login berhasil", response.data);
     } catch (err) {
