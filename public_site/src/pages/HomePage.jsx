@@ -12,9 +12,7 @@ function App() {
 
   async function fetchProducts() {
     try {
-      const { data } = await axios.get(
-        `https://vngbr.web.id/pub/cuisines?search=${search}&page=${currentPage}&sort=${sort}&categories=${filter}`
-      );
+      const { data } = await axios.get(`https://vngbr.web.id/pub/cuisines`);
 
       console.log(data);
 
