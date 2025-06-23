@@ -11,7 +11,7 @@ export default function EditCuisineForm() {
 
   async function fetchCuisine() {
     try {
-      const { data } = await axios.get(`http://localhost:3000/cuisines/${id}`, {
+      const { data } = await axios.get(`https://vngbr.web.id/cuisines/${id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.access_token}`,
         },
@@ -37,7 +37,7 @@ export default function EditCuisineForm() {
       const authorId = +localStorage.getItem("authorId");
       const formWithAuthor = { ...form, authorId };
 
-      await axios.put(`http://localhost:3000/cuisines/${id}`, formWithAuthor, {
+      await axios.put(`https://vngbr.web.id/cuisines/${id}`, formWithAuthor, {
         headers: {
           Authorization: `Bearer ${localStorage.access_token}`,
         },

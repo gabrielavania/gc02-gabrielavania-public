@@ -28,7 +28,7 @@ export default function CuisineForm({ cuisines, handleSubmit, propName }) {
   }
   async function fetchCategories() {
     try {
-      const { data } = await axios.get("http://localhost:3000/categories", {
+      const { data } = await axios.get("https://vngbr.web.id/categories", {
         headers: {
           Authorization: `Bearer ${localStorage.access_token}`,
         },

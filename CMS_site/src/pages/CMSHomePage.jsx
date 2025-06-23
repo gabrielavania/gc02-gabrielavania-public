@@ -7,7 +7,7 @@ export default function CMSHomePage() {
 
   async function fetchProduct() {
     try {
-      const { data } = await axios.get("http://localhost:3000/cuisines", {
+      const { data } = await axios.get("https://vngbr.web.id/cuisines", {
         headers: {
           Authorization: `Bearer ${localStorage.access_token}`,
         },
@@ -25,7 +25,7 @@ export default function CMSHomePage() {
   async function handleDelete(id) {
     try {
       const { data } = await axios.delete(
-        `http://localhost:3000/cuisines/${id}`,
+        `https://vngbr.web.id/cuisines/${id}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.access_token}`,

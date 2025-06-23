@@ -12,7 +12,7 @@ export default function AddCuisineForm() {
       const authorId = +localStorage.getItem("authorId");
       const formWithAuthor = { ...form, authorId };
 
-      await axios.post("http://localhost:3000/cuisines", formWithAuthor, {
+      await axios.post("https://vngbr.web.id/cuisines", formWithAuthor, {
         headers: {
           Authorization: `Bearer ${localStorage.access_token}`,
         },

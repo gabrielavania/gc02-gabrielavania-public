@@ -9,7 +9,7 @@ export default function CMSHomePage() {
 
   async function fetchProduct() {
     try {
-      const { data } = await axios.get(`http://localhost:3000/cuisines/${id}`, {
+      const { data } = await axios.get(`https://vngbr.web.id/cuisines/${id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.access_token}`,
         },
@@ -38,7 +38,7 @@ export default function CMSHomePage() {
       formData.append("imgUrl", images);
 
       const { data } = await axios.patch(
-        `http://localhost:3000/cuisines/imgUrl/${id}`,
+        `https://vngbr.web.id/cuisines/imgUrl/${id}`,
         formData,
         {
           headers: {

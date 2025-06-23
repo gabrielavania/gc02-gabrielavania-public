@@ -25,15 +25,11 @@ export default function AddUserForm() {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      const { data } = await axios.post(
-        "http://localhost:3000/add-user",
-        form,
-        {
-          headers: {
-            Authorization: `Bearer ${localStorage.access_token}`,
-          },
-        }
-      );
+      const { data } = await axios.post("https://vngbr.web.id/add-user", form, {
+        headers: {
+          Authorization: `Bearer ${localStorage.access_token}`,
+        },
+      });
 
       Swal.fire({
         position: "center",

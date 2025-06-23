@@ -13,7 +13,7 @@ const Login = () => {
     console.log(`email: ${email}, password: ${password}`);
 
     try {
-      const { data } = await axios.post("http://localhost:3000/login", {
+      const { data } = await axios.post("https://vngbr.web.id/login", {
         email,
         password,
       });
